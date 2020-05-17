@@ -1,19 +1,18 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PaginationRoutingModule } from './pagination-routing.module';
 import { PaginationComponent } from './pagination.component';
 import { FinraService } from '../shared/service/finra.service';
-import { MatTableModule } from '@angular/material/table';
-
-
+import { ValidateNumberComponent } from './validate-number/validate-number.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [PaginationComponent],
+  declarations: [PaginationComponent, ValidateNumberComponent],
   imports: [
     CommonModule,
     PaginationRoutingModule,
-    MatTableModule,
+    ReactiveFormsModule
   ],
   providers: [FinraService]
 })

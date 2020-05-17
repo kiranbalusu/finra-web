@@ -1,0 +1,67 @@
+<!--<div class="container-fluid " style="padding-top:1em;">
+        <form formGroup="validateForm" (ngSubmit)="onSubmit()">
+        <div class="card">
+            <div class="card-header mat-elevation-z2">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        Finra Number Validation
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+               <!-- <form formGroup = "validateNumberForm" (ngSubmit)="submit()">
+                 <label for="phoneNumber">Phone Number:</label>
+                        <input matInput placeholder="Enter Phone Number" formControlName="phoneNumber" minlength=7 maxlength=10/>
+                   <div *ngIf="f.phoneNumber.touched && f.phoneNumber.invalid" class="alert alert-danger">
+                       <div *ngIf="f.phoneNumber.errors.pattern">Please Enter 7 or 10 digit mobile number</div>
+                   </div>
+                </form>-->
+
+                
+<!--
+                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="phoneNumber">Phone Number </label>
+                                                <input (keypress)="validateNumber($event, $event.target.value)" required type="text" formControlName="phoneNumber" class="form-control" placeholder="Enter Your phone Number">
+                                                <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
+                                                <div *ngIf="f.phoneNumber.errors.required">Phone number is required</div>
+                                                <div *ngIf="f.phoneNumber.errors.pattern || f.phoneNumber.errors.maxlength || f.phoneNumber.errors.minlength">Phone number must be at least 7 numbers</div>
+                                            </div>
+                                            </div>
+                                        </div>
+                        
+                        <input type="button" class="btn btn-primary" value="Submit" (click)="submit()">
+                        
+            </div>
+        </div>
+    </form>
+    <div class="row col-md-12">
+        <button type="button" class="btn btn-primary" (click)="navToPagination()">Pagination</button>
+    </div>
+</div>-->
+
+<div class="card m-3">
+        <h5 class="card-header">Form Validation</h5>
+        <div class="card-body">
+            <form formGroup="validateForm" (ngSubmit)="onSubmit()">
+                <div class="form-row">
+                    
+                    <div class="form-group col-5">
+                        <label>Phone Number</label>
+                        <input type="text" formControlName="phoneNUmber" class="form-control" (keypress)="validateNumber($event, $event.target.value)" />
+                        <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
+                                <div *ngIf="f.phoneNumber.errors.required">Phone number is required</div>
+                                <div *ngIf="f.phoneNumber.errors.pattern || f.phoneNumber.errors.maxlength || f.phoneNumber.errors.minlength">Phone number must be at least 7 numbers</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <button type="button" class="btn btn-primary mr-1" (click)="submit()">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row col-md-12">
+            <button type="button" class="btn btn-primary" (click)="navToPagination()">Pagination</button>
+        </div>
