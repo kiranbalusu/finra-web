@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-validate-number',
@@ -8,20 +8,16 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
   styleUrls: ['./validate-number.component.less']
 })
 export class ValidateNumberComponent implements OnInit {
-  validateForm =  new FormGroup ({
-    phoneNumber: new FormControl(['', [ Validators.required,
-      Validators.pattern("^[0-9]*$"),
-      Validators.minLength(10), Validators.maxLength(10)]])
-  });
+  validateForm: FormGroup;
   submitted = false;
   constructor(private router: Router, private route: ActivatedRoute, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    /*this.validateForm = this.formBuilder.group({
+    this.validateForm = this.formBuilder.group({
       phoneNumber: ['', [ Validators.required,
         Validators.pattern("^[0-9]*$"),
         Validators.minLength(10), Validators.maxLength(10)]]
-    });*/
+    });
   }
 
   navToPagination()
