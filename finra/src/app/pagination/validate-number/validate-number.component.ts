@@ -10,13 +10,14 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class ValidateNumberComponent implements OnInit {
   validateForm: FormGroup;
   submitted = false;
+  phoneNumPattern = '^[0-9]*$';
   constructor(private router: Router, private route: ActivatedRoute, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.validateForm = this.formBuilder.group({
       phoneNumber: ['', [ Validators.required,
-        Validators.pattern("^[0-9]*$"),
-        Validators.minLength(10), Validators.maxLength(10)]]
+        Validators.pattern(this.phoneNumPattern),
+        Validators.minLength(7), Validators.maxLength(10)]]
     });
   }
 
